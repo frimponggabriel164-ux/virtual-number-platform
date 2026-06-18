@@ -1,0 +1,12 @@
+<h1>Dashboard</h1>
+
+<button onclick="load()">Load Numbers</button>
+<div id="list"></div>
+
+<script>
+async function load(){
+const r = await fetch("http://localhost:5000/api/numbers");
+const d = await r.json();
+list.innerHTML = JSON.stringify(d);
+}
+</script>
